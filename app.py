@@ -27,10 +27,9 @@ def home():
     return render_template("home.html")
 
 @app.route('/sentiment_analysis_prediction', methods = ['POST', "GET"])
-def sent_anly_prediction():
+def sent_anly_pred():
     if request.method=='POST':
-        text = request.form['text']
-        Sentiment = ''
+        text = request.form['COMMENT']
         max_review_length = 500
         word_to_id = imdb.get_word_index()
         strip_special_chars = re.compile("[^A-Za-z0-9 ]+")
@@ -51,6 +50,8 @@ def sent_anly_prediction():
             sentiment = 'Positive'
             img_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'Smiling_Emoji.png')
     return render_template('home.html', text=text, sentiment=sentiment, probability=probability, image=img_filename)
+
+
 #########################Code for Sentiment Analysis
 
 if __name__ == "__main__":
