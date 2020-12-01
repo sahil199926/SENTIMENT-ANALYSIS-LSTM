@@ -49,7 +49,7 @@ def sent_anly_pred():
         else:
             sentiment = 'Positive'
             img_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'Smiling_Emoji.png')
-    return render_template('result.html', text=text, sentiment=sentiment, prob=probability, image=img_filename)
+    return render_template('<h1>sahil<h1/>')
 
 @app.route('/result',methods=['GET','POST'])
 def result():
