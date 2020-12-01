@@ -11,7 +11,7 @@ from keras.models import load_model
 
 IMAGE_FOLDER = os.path.join('static', 'img_pool')
 
-app = Flask(__name__)
+app = Flask(__name__,template_folder='templates')
 
 app.config['UPLOAD_FOLDER'] = IMAGE_FOLDER
 
